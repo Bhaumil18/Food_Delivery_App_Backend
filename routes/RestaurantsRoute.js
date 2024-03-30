@@ -1,7 +1,12 @@
 const express = require("express");
-const { getRestaurants } = require("../controllers/RestaurantsController");
+const {
+  getRestaurants,
+  getRestaurant,
+} = require("../controllers/RestaurantsController");
 const { param } = require("express-validator");
 const router = express.Router();
+
+router.route("/details/:restaurantId").get(getRestaurant);
 
 router
   .route("/:city")

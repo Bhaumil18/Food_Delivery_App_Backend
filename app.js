@@ -4,7 +4,7 @@ const cors = require("cors");
 const express = require("express");
 const ConncectDB = require("./db/connect");
 
-const {v2 : cloudinary} = require('cloudinary')
+const { v2: cloudinary } = require("cloudinary");
 const notFound = require("./middlewares/notFound");
 const errorHandler = require("./middlewares/errorHandlerMiddleware");
 
@@ -12,14 +12,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const userRouter = require('./routes/User')
-app.use('/api/user', userRouter);
+const userRouter = require("./routes/User");
+app.use("/api/user", userRouter);
 
-const myRestaurantRouter = require('./routes/MyRestaurantRoute');
-app.use('/api/my/restaurant', myRestaurantRouter);
+const myRestaurantRouter = require("./routes/MyRestaurantRoute");
+app.use("/api/my/restaurant", myRestaurantRouter);
 
-const restaurantRouter = require('./routes/RestaurantsRoute');
-app.use('/api/restaurants/', restaurantRouter);
+const restaurantRouter = require("./routes/RestaurantsRoute");
+app.use("/api/restaurants/", restaurantRouter);
 
 // middlewares/api
 
